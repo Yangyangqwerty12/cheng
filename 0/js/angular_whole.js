@@ -57,5 +57,8 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         }).state('mima', {
             url: '/mima',
             templateUrl: 'mimachongzhi.html'
+        }).state('BG', {
+            url: '/BG',
+            templateUrl: 'home_b_s.html'
         })
 });
