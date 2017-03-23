@@ -1,6 +1,5 @@
-/**
- * Created by Administrator on 2017/3/21.
- */
+
+
 var routerApp = angular.module('myApp', ['ui.router']);
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
@@ -42,6 +41,12 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         }).state('GR_DP', {
             url: '/GR_DP',
             templateUrl: 'index_dianpu.html'
+        }).state('RWM', {
+            url: '/RWM',
+            templateUrl: 'home_code.html'
+        }).state('SHR', {
+            url: '/SHR',
+            templateUrl: 'relev_update.html'
         }).state('WD_ZPK', {
             url: '/WD_ZPK',
             templateUrl: 'index_w_zpk.html'
@@ -54,11 +59,20 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         }).state('Z_C', {
             url: '/Z_C',
             templateUrl: 'index.html'
+        }).state('MR_DZ', {
+            url: '/MR_DZ',
+            templateUrl: 'home_z_d.html'
         }).state('mima', {
             url: '/mima',
             templateUrl: 'mimachongzhi.html'
         }).state('BG', {
             url: '/BG',
             templateUrl: 'home_b_s.html'
+        }).state('BG1', {
+            url: '/BG1',
+            templateUrl: 'home_b_sj.html'
+        }).state('GD', {
+            url: '/GD',
+            templateUrl: 'financial_g.html'
         })
 });

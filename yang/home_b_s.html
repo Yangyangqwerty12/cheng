@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>资料修改-地址</title>
+    <title>变更绑定手机号</title>
     <link rel="stylesheet" href="css/header.css"/>
     <link rel="stylesheet" href="css/home.css"/>
     <link rel="stylesheet" href="css/zz.css"/>
@@ -13,34 +13,35 @@
 <div class="wap">
     <header>
         <div class="y_top">
-            <div class="y_left" ui-sref="F_Z">
+            <div class="y_left" ui-sref="CW">
                 <img src="img/a1_03.png" alt=""/>
             </div>
             <div class="y_center">
-                <h3>默认收件地址</h3>
+                <h3>变更绑定手机号</h3>
             </div>
             <div class="y_right">
-                <span>保存</span>
+                <img src="img/a1_05.png" alt=""/>
             </div>
         </div>
     </header>
     <section>
-        <div class="y_z_d_main">
-            <div class="info">
-                收货人：<input type="text"/>
+        <div class="y_b_s_main">
+            <div class="phone">
+                向原手机号：183....1630发送验证码，请填写：
             </div>
-            <div class="info">
-                手机号：<input type="text"/>
+            <div class="code">
+                <div class="code_l">
+                    <input type="text" placeholder="请输入验证码："/>
+                </div>
+                <div class="code_r"><span>获取验证码</span></div>
             </div>
-            <div class="info">
-                所在地区：<input type="text"/><span><img src="img/a1_51.png" alt=""/></span>
+            <div class="submit">
+                <button id="button" ui-sref="BG1">提交</button>
             </div>
-            <div class="info">
-                具体地址：<input type="text"/>
-            </div>
-            
         </div>
     </section>
+
 </div>
 </body>
+
 </html>
