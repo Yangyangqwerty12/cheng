@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>注册首页</title>
+		<link rel="stylesheet" type="text/css" href="css/zhuceshouye.css" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			.rmid {
+				position: absolute;
+				display: none;
+				background: red;
+				width: 200px;
+				height: 50px;
+				opacity: 0.5;
+				left: 50%;
+				top: 40%;
+				-webkit-transform: translate(-50%);
+				transform-origin: 50% 50%;
+				text-align: center;
+				line-height: 50px;
+				font-size: 24px;
+			}
+			
+			.rmid p {
+				color: #FFFFFF;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<section>
+				<div class="s_logo">
+					<img src="img/logo.png" alt="" />
+					<h1>优城设计</h1>
+				</div>
+				<div class="s_tel">
+					<img src="yc/denglu/a_07.png" />
+					<div class="s_tel_list">
+						<input type="text" id='user' placeholder="请输入绑定手机号" />
+					</div>
+				</div>
+				<div class="s_pwd">
+					<img src="yc/denglu/a_10.png" />
+					<div class="s_pwd_list">
+						<input type="password" id="pwd" placeholder="请输入密码" />
+					</div>
+				</div>
+				<div class="botton1">
+					<button class="btn">登录</button>
+				</div>
+				<div class="s_bottom">
+					<a href="zhuce.html">注册账号</a>
+					<span><a href="" ui-sref="mima">忘记密码</a></span>
+				</div>
+			</section>
+			<div class="rmid">
+				<p></p>
+			</div>
+		</div>
+	</body>
+	<!--<script src="js/angular.min.js"></script>
+	<script src="js/angular-ui-router.js"></script>
+	<script src="js/angular_whole.js"></script>-->
+	<script src="js/jquery-3.1.1.js"></script>
+	<script>
+		
+		$(function(){
+			$('.btn').click(function() {
+				var user = $('#user').val();
+				var pwd = $('#pwd').val();
+				if(user == "") {
+					$('.rmid').fadeIn("slow");
+					setTimeout(function() {
+						$('.rmid').fadeOut("slow");
+					}, 2000)
+					$('.rmid p').html("请输入您的账号");
+					return false;
+				}
+				if(pwd==""){
+					$('.rmid').fadeIn("slow");
+					setTimeout(function() {
+						$('.rmid').fadeOut("slow");
+					}, 2000)
+					$('.rmid p').html("请输入密码");
+					return false;
+				}
+
+				$.ajax({
+					type: "get",
+					url: "http://localhost:3000/select?admin=" + user + "&pwd=" + pwd,
+					dataType: "json",
+					success: function(data) {
+						if(data.code == -1) {
+							$('.rmid').fadeIn("slow");
+							setTimeout(function() {
+								$('.rmid').fadeOut("slow");
+							}, 2000)
+							$('.rmid p').html("请注册账号");
+						} else {
+							if(data.code == 1) {
+								$('.rmid').fadeIn("slow");
+								setTimeout(function() {
+									$('.rmid').fadeOut("slow");
+									location.href = "shoye.html"
+								}, 2000)
+								$('.rmid p').html("登陆成功，跳转中");
+
+							} else if(data.code == 0) {
+								$('.rmid').fadeIn("slow");
+								setTimeout(function() {
+									$('.rmid').fadeOut("slow");
+								}, 2000)
+								$('.rmid p').html("账号或密码错误");
+							}
+						}
+					}
+				})
+			})
+		})
+	</script>
+
+</html>
